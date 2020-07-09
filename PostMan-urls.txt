@@ -1,0 +1,34 @@
+1.Create Order:
+
+Url
+localhost:8087/Order/create
+Body:
+{
+    "customerId": "CUST1","orderDate":"2020-07-15","totalPrice":520,"addressId":"ADDID1",
+    "orderItemList" :[
+        {"productCode": "PC01","productName":"MOBILE-APPLE","quantity":10},
+        {"productCode": "PC02","productName":"MOBILE-SAMSUNG","quantity":10}
+    ]
+}
+
+2.Get Order
+
+
+localhost:8087/Order/retrieve?orderId=1
+
+3. Exception Testing(Invalid Order)
+
+localhost:8087/Order/retrieve?orderId=10
+
+4. Exception Testing(Invalid Input)
+
+Url
+localhost:8087/Order/create
+Body:
+{
+    "customerId": "","orderDate":"2020-07-15","totalPrice":520,"addressId":"ADDID1",
+    "orderItemList" :[
+        {"productCode": "PC01","productName":"MOBILE-APPLE","quantity":10},
+        {"productCode": "PC02","productName":"MOBILE-SAMSUNG","quantity":10}
+    ]
+}
